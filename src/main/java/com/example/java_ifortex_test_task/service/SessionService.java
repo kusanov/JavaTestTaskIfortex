@@ -6,6 +6,7 @@ import com.example.java_ifortex_test_task.repository.SessionRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Service
@@ -16,11 +17,12 @@ public class SessionService {
 
     // Returns the first (earliest) desktop Session
     public SessionResponseDTO getFirstDesktopSession() {
-        return null;
+        return sessionMapper.toDto(sessionRepository.getFirstDesktopSession());
     }
 
     // Returns only Sessions from Active users that were ended before 2025
     public List<SessionResponseDTO> getSessionsFromActiveUsersEndedBefore2025() {
-        return null;
+        return sessionRepository.getSessionsFromActiveUsersEndedBefore2025().stream().map(
+                sessionMapper::toDto).toList();
     }
 }

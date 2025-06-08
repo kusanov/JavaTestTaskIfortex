@@ -1,4 +1,4 @@
-CREATE TABLE users (
+CREATE TABLE users  (
                        id SERIAL PRIMARY KEY,
                        first_name VARCHAR(50) NOT NULL,
                        last_name VARCHAR(50) NOT NULL,
@@ -9,7 +9,7 @@ CREATE TABLE users (
 
 CREATE TABLE sessions (
                           id SERIAL PRIMARY KEY,
-                          device_type INTEGER NOT NULL CHECK (device_type IN (1, 2)),
+                          device_type INTEGER NOT NULL CHECK (device_type IN (0, 1, 2)),
                           ended_at_utc TIMESTAMP,
                           started_at_utc TIMESTAMP NOT NULL,
                           user_id INTEGER NOT NULL,

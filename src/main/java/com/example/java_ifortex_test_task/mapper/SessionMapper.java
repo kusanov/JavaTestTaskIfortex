@@ -1,6 +1,7 @@
 package com.example.java_ifortex_test_task.mapper;
 
 import com.example.java_ifortex_test_task.dto.SessionResponseDTO;
+import com.example.java_ifortex_test_task.entity.DeviceType;
 import com.example.java_ifortex_test_task.entity.Session;
 import org.springframework.stereotype.Component;
 
