@@ -1,5 +1,6 @@
 package com.example.java_ifortex_test_task.repository;
 
+import com.example.java_ifortex_test_task.entity.DeviceType;
 import com.example.java_ifortex_test_task.entity.Session;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -7,7 +8,7 @@ import java.util.List;
 
 public interface SessionRepository extends JpaRepository<Session, Long> {
 
-    @Query(value = "SELECT s.* FROM sessions s WHERE device_type = '1' AND ended_at_utc is NULL ORDER BY started_at_utc ASC LIMIT 1", nativeQuery = true)
+    @Query(value = "SELECT s.* FROM sessions s WHERE device_type = 2 AND ended_at_utc is NULL ORDER BY started_at_utc ASC LIMIT 1", nativeQuery = true)
     Session getFirstDesktopSession();
 
 

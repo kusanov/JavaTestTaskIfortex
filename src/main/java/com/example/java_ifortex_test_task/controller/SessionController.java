@@ -19,7 +19,6 @@ public class SessionController {
 
     @GetMapping("/first-desktop")
     public ResponseEntity<SessionResponseDTO> getFirstDesktopSession() {
-        System.out.println("!!!");
         return ResponseEntity.ok(sessionService.getFirstDesktopSession());
     }
 
